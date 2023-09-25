@@ -16,6 +16,7 @@ export type InputPillItem<T> = {
     type: string;
     img_src?: string;
     deactivated?: boolean;
+    is_bot?: boolean;
     status_emoji_info?: EmojiRenderingDetails & {emoji_alt_code: boolean}; // TODO: Move this in user_status.js
 } & T;
 
@@ -54,6 +55,7 @@ type InputPillRenderingDetails = {
     img_src?: string;
     deactivated?: boolean;
     has_status?: boolean;
+    is_bot?: boolean;
     status_emoji_info?: EmojiRenderingDetails & {emoji_alt_code: boolean};
 };
 
@@ -161,6 +163,8 @@ export function create<T>(opts: InputPillCreateOptions<T>): InputPillContainer<T
             if (has_image) {
                 opts.img_src = item.img_src;
             }
+
+            opts.is_bot = item.is_bot;
 
             if (store.pill_config?.show_user_status_emoji === true) {
                 const has_status = item.status_emoji_info !== undefined;

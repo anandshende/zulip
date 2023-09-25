@@ -43,6 +43,8 @@ export function create_item_from_email(email, current_items) {
 
     const status_emoji_info = user_status.get_status_emoji(user.user_id);
 
+    let is_bot = people.user_is_bot(user.user_id)
+
     // We must supply display_value for the widget to work.  Everything
     // else is for our own use in callbacks.
     const item = {
@@ -53,6 +55,7 @@ export function create_item_from_email(email, current_items) {
         img_src: avatar_url,
         deactivated: false,
         status_emoji_info,
+        is_bot
     };
 
     // We pass deactivated true for a deactivated user
