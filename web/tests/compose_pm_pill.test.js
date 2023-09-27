@@ -20,18 +20,21 @@ run_test("pills", ({override, override_rewire}) => {
         user_id: 1,
         email: "othello@example.com",
         full_name: "Othello",
+        is_bot: false,
     };
 
     const iago = {
         email: "iago@zulip.com",
         user_id: 2,
         full_name: "Iago",
+        is_bot: false,
     };
 
     const hamlet = {
         email: "hamlet@example.com",
         user_id: 3,
         full_name: "Hamlet",
+        is_bot: false,
     };
 
     people.add_active_user(othello);
@@ -93,6 +96,8 @@ run_test("pills", ({override, override_rewire}) => {
         switch (id) {
             case othello.user_id:
                 return othello;
+            case iago.user_id:
+                return iago;
             case hamlet.user_id:
                 return hamlet;
             /* istanbul ignore next */
@@ -173,7 +178,13 @@ run_test("pills", ({override, override_rewire}) => {
     const persons = [othello, iago, hamlet];
     const items = compose_pm_pill.filter_taken_users(persons);
     assert.deepEqual(items, [
-        {email: "iago@zulip.com", user_id: 2, full_name: "Iago", is_moderator: false},
+        {
+            email: "iago@zulip.com",
+            user_id: 2,
+            full_name: "Iago",
+            is_moderator: false,
+            is_bot: false,
+        },
     ]);
 
     test_create_item(create_item_handler);

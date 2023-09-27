@@ -93,21 +93,25 @@ test_ui("populate_user_groups", ({mock_template, override, override_rewire}) => 
         name: "Mobile",
         description: "All mobile people",
         members: new Set([2, 4]),
+        is_bot: false,
     };
     const iago = {
         email: "iago@zulip.com",
         user_id: 2,
         full_name: "Iago",
+        is_bot: false,
     };
     const alice = {
         email: "alice@example.com",
         user_id: 31,
         full_name: "Alice",
+        is_bot: false,
     };
     const bob = {
         email: "bob@example.com",
-        user_id: 32,
+        user_id: 4,
         full_name: "Bob",
+        is_bot: false,
     };
 
     people.add_active_user(iago);
