@@ -12,19 +12,19 @@ const user_pill = zrequire("user_pill");
 const alice = {
     email: "alice@example.com",
     user_id: 99,
-    full_name: "Alice Barson"
+    full_name: "Alice Barson",
 };
 
 const isaac = {
     email: "isaac@example.com",
     user_id: 102,
-    full_name: "Isaac Newton"
+    full_name: "Isaac Newton",
 };
 
 const bogus_item = {
     email: "bogus@example.com",
     type: "user",
-    display_value: "bogus@example.com"
+    display_value: "bogus@example.com",
     // status_emoji_info: undefined,
 };
 
