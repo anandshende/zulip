@@ -767,7 +767,7 @@ export function sender_is_guest(message: Message): boolean {
 
 export function user_is_bot(user_id: number): boolean {
     const user = get_by_user_id(user_id);
-    return user.is_bot;
+    return user ? user.is_bot : false;
 }
 
 export function user_can_direct_message(recipient_ids_string: string): boolean {

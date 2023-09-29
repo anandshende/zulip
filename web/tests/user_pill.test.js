@@ -12,22 +12,19 @@ const user_pill = zrequire("user_pill");
 const alice = {
     email: "alice@example.com",
     user_id: 99,
-    full_name: "Alice Barson",
-    is_bot: false,
+    full_name: "Alice Barson"
 };
 
 const isaac = {
     email: "isaac@example.com",
     user_id: 102,
-    full_name: "Isaac Newton",
-    is_bot: false,
+    full_name: "Isaac Newton"
 };
 
 const bogus_item = {
     email: "bogus@example.com",
     type: "user",
-    display_value: "bogus@example.com",
-    is_bot: false,
+    display_value: "bogus@example.com"
     // status_emoji_info: undefined,
 };
 
@@ -39,7 +36,6 @@ const isaac_item = {
     deactivated: false,
     img_src: `http://zulip.zulipdev.com/avatar/${isaac.user_id}?s=50`,
     status_emoji_info: undefined,
-    is_bot: false,
 };
 
 let pill_widget = {};
